@@ -39,3 +39,7 @@ npm run changeset
 ```
 
 Releases use Changesets and npm trusted publishing (`.github/workflows/release.yml`); register that workflow as a Trusted Publisher for `@jsilvanus/notify-core` on npmjs.com before the first release.
+
+## Releasing
+
+Add a changeset to every user-visible change (`npm run changeset`). Merging to `main` makes the Release workflow open a "Version Packages" PR; merging that PR publishes to npm with trusted publishing (OIDC, provenance), no token stored. The package was first published once by hand because npm trusted publishing can only be configured on an existing package.
