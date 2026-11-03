@@ -1,0 +1,26 @@
+# One-off: publish the very first version by hand-triggered run, using a short-lived npm token
+# stored as the repository secret NPM_TOKEN. Needed because npm trusted publishing can only be
+# configured on a package that already exists. After the first publish, set up the Trusted
+# Publisher on npmjs.com, delete the secret, revoke the token and delete this workflow.
+name: First publish
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+      - run: npm ci
+      - run: npm test
+      - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
