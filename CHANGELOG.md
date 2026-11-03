@@ -1,5 +1,11 @@
 # @jsilvanus/notify-core
 
+## 0.1.1
+
+### Patch Changes
+
+- 67c6efc: Document the release and first-publish process in the README.
+
 ## 0.1.0
 
 ### Minor Changes
