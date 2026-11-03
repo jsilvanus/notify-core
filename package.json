@@ -1,6 +1,6 @@
 {
   "name": "@jsilvanus/notify-core",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Notification core: email and SMS through pluggable provider adapters, with consent, cooldown, rate limits and encrypted contact storage",
   "type": "module",
   "main": "src/index.js",
