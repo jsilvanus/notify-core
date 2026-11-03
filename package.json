@@ -1,0 +1,45 @@
+{
+  "name": "@jsilvanus/notify-core",
+  "version": "0.0.0",
+  "description": "Notification core: email and SMS through pluggable provider adapters, with consent, cooldown, rate limits and encrypted contact storage",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "src",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "changeset": "changeset",
+    "version-packages": "changeset version && npm install --package-lock-only --ignore-scripts",
+    "release": "changeset publish"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "EUPL-1.2",
+  "author": "Juha Itäleino <jsilvanus@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsilvanus/notify-core.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "nodemailer": ">=6"
+  },
+  "peerDependenciesMeta": {
+    "nodemailer": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.31.1",
+    "nodemailer": "^9.1.1"
+  }
+}
